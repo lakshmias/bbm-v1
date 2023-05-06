@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "Specimen")
+@Table(name = "Specimen",schema = "BBM")
 public class Specimen {
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,7 +45,7 @@ public class Specimen {
 
 		public Specimen() {
 			super();
-			// TODO Auto-generated constructor stub
+			
 		}
 
 		public Specimen(Long oID, String bLOODGROUP, String rHFACTOR, Long uNITRECEIVED, Date cOLLECTEDON,
