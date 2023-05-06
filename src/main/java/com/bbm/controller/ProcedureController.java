@@ -34,14 +34,14 @@ public class ProcedureController {
 	}
 	
 	@GetMapping("/procedure")
-
-	public List<Procedure> listAllProcedure() {
-
+	public List<Procedure> listAllProcedure() 
+	{
 		return procedureService.listAllProcedure();
 	}
 	
 	@GetMapping("/procedure/{OID}")
-	public Optional<Procedure> searchByProcedureId(@PathVariable Long OID) {
+	public Optional<Procedure> searchByProcedureId(@PathVariable Long OID) 
+	{
 		return procedureService.searchByOID(OID);
 	}
 
