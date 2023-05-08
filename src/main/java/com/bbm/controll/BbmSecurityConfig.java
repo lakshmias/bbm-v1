@@ -42,13 +42,11 @@ public class BbmSecurityConfig {
 
 		
 		http.authorizeHttpRequests()
-		.requestMatchers("/welcome/**").permitAll()
-		//specimen
-		.requestMatchers("/specimen/**").authenticated()
-		.requestMatchers("/procedure/**").authenticated()
-		.requestMatchers("/createProcedure/**").permitAll()
-		.requestMatchers("/listprocedure/**").permitAll()
-		.requestMatchers("/findbytid/**").permitAll()
+		.requestMatchers("/**").permitAll()
+		// .requestMatchers("/welcome/**").permitAll()
+		// .requestMatchers("/welcomeProcedure/**").permitAll()
+		// .requestMatchers("/specimen/**").authenticated()
+		// .requestMatchers("/procedure/**").authenticated()
 		.and().httpBasic();
 		//http.httpBasic();
 		//http.cors();
