@@ -12,28 +12,28 @@ public class Specimen {
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Long OID;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private String BLOODGROUP;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private String RHFACTOR;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private Long UNITSRECEIVED;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private Date COLLECTEDON;
 
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private Date EXPIRYDATE;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private Long PERFORMEDBY;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private String COMMENTS;
 		
-		@Column(nullable = false)
+		@Column(nullable = true)
 		private String STATUS;
 		
 		@Override

@@ -19,22 +19,22 @@ public class Procedure {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long OID;
 	
-	@Column(nullable = false,unique = false)
+	@Column(nullable = true)
 	private Date performedOn;
 	
-	@Column(nullable = false,unique = false)
+	@Column(nullable = true)
 	private Long performedBy;
 	
-	@Column(nullable = false,unique = false)
+	@Column(nullable = true)
 	private Long specimenOID;
 	
-	@Column(nullable = false,unique = false)
+	@Column(nullable = true)
 	private Long unitsTransfused;
 	
-	@Column(nullable = false,unique = false)
+	@Column(nullable = true)
 	private String comments;
 	
-	@Column(nullable = false,unique = false)
+	@Column(nullable = true)
 	private String status;
 
 	public Procedure() {
