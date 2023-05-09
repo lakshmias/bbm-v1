@@ -16,7 +16,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+
 @Configuration
+@EnableSwagger2
 @EnableWebSecurity(debug = true)
 public class BbmSecurityConfig {
 	
@@ -47,6 +49,12 @@ public class BbmSecurityConfig {
 		// .requestMatchers("/welcomeProcedure/**").permitAll()
 		// .requestMatchers("/specimen/**").authenticated()
 		// .requestMatchers("/procedure/**").authenticated()
+		.requestMatchers("/v2/api-docs",
+						"/v3/api-docs/**",
+						"/swagger-resources/configuration/ui",  
+						"/swagger-resources/configuration/security", 
+						"/webjars/**",
+						"/swagger-ui.html","/swagger-ui/**").permitAll()
 		.and().httpBasic();
 		//http.httpBasic();
 		//http.cors();
@@ -84,5 +92,9 @@ public class BbmSecurityConfig {
         return new CorsFilter();
     }
 
-	
+	@Bean
+	public PasswordEncoder encoder() {
+		return new BCryptPasswordEncoder();
+	}
+
 }

@@ -9,31 +9,31 @@ import jakarta.persistence.*;
 @Table(name = "Specimen",schema = "BBM")
 public class Specimen {
 		@Id
-		@GeneratedValue(strategy = GenerationType.AUTO)
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long OID;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="BLOODGROUP")
 		private String BLOODGROUP;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="RHFACTOR")
 		private String RHFACTOR;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="UNITSRECEIVED")
 		private Long UNITSRECEIVED;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="COLLECTEDON")
 		private Date COLLECTEDON;
 
-		@Column(nullable = true)
+		@Column(nullable = true,name="EXPIRYDATE")
 		private Date EXPIRYDATE;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="PERFORMEDBY")
 		private Long PERFORMEDBY;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="COMMENTS")
 		private String COMMENTS;
 		
-		@Column(nullable = true)
+		@Column(nullable = true,name="STATUS")
 		private String STATUS;
 		
 		@Override

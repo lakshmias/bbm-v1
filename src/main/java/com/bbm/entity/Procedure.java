@@ -16,33 +16,36 @@ import jakarta.persistence.Table;
 public class Procedure {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long OID;
 	
-	@Column(nullable = true)
+	@Column(nullable = true,name="PERFORMEDON")
 	private Date performedOn;
 	
-	@Column(nullable = true)
+	@Column(nullable = true,name="PERFORMEDBY")
 	private Long performedBy;
 	
-	@Column(nullable = true)
+	@Column(nullable = true,name="SPECIMENOID")
 	private Long specimenOID;
 	
-	@Column(nullable = true)
+	@Column(nullable = true,name="UNITSTRANSFUSED")
 	private Long unitsTransfused;
 	
-	@Column(nullable = true)
+	@Column(nullable = true,name="COMMENTS")
 	private String comments;
 	
-	@Column(nullable = true)
+	@Column(nullable = true,name="STATUS")
 	private String status;
+
+	@Column(nullable = true,name="PATIENTOID")
+	private Long patientOID;
 
 	public Procedure() {
 		super();
 	}
 
 	public Procedure(Long OID, Date performedOn, Long performedBy, Long specimenOID, Long unitsTransfused,
-			String comments, String status) {
+			String comments, String status,Long PatientOID) {
 		super();
 		this.OID = OID;
 		this.performedOn = performedOn;
@@ -51,6 +54,7 @@ public class Procedure {
 		this.unitsTransfused = unitsTransfused;
 		this.comments = comments;
 		this.status = status;
+		this.patientOID=PatientOID;
 	}
 
 	public Long getProcedureId() {
@@ -107,6 +111,16 @@ public class Procedure {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public void setPatientOID(Long patientOID)
+	{
+		this.patientOID=patientOID;
+	}
+
+	public Long getPatientOID()
+	{
+		return this.patientOID;
 	}
 
 	@Override

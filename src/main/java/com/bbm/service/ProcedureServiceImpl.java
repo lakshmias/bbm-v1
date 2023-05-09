@@ -28,6 +28,11 @@ public class ProcedureServiceImpl implements ProcedureService {
 		return procedureRepository.save(procedure);
 	}
 	
+	@Override
+	public Procedure updateProcedure(Procedure procedure)
+	{
+		return procedureRepository.save(procedure);
+	}
 
 
 }

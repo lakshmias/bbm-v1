@@ -14,4 +14,5 @@ public interface ProcedureService {
 	public Procedure createProcedure(Procedure procedure);
 	public List<Procedure> listAllProcedure();
 	public Optional<Procedure> searchByOID(@PathVariable Long pid);
+	public Procedure updateProcedure(Procedure procedure);
 }

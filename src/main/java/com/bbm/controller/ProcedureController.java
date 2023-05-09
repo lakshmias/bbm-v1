@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,4 +47,16 @@ public class ProcedureController {
 		return procedureService.searchByOID(OID);
 	}
 
+	@PutMapping("/Procedure/{OID}")
+	public ResponseEntity<Procedure> putProcedure(@PathVariable Long OID, @RequestBody Procedure proc) {
+		Procedure updateProcedure = procedureRepository.findByOID(OID);
+
+		updateProcedure.setPerformedBy(proc.getPerformedBy());
+		updateProcedure.setComments(proc.getComments());
+		updateProcedure.setStatus(proc.getStatus());
+		updateProcedure.setUnitsTransfused(proc.getUnitsTransfused());
+
+		procedureRepository.save(updateProcedure);
+		return ResponseEntity.ok(updateProcedure);
+	}
 }
