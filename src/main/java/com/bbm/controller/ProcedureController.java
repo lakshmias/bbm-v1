@@ -16,6 +16,8 @@ import com.bbm.entity.Procedure;
 import com.bbm.repo.ProcedureRepository;
 import com.bbm.service.ProcedureService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+@Tag(name = "Procedure", description = "APIs to use for transfusion related activities")
 @RestController
 public class ProcedureController {
 	
